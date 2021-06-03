@@ -1,5 +1,13 @@
 package _01_Sorting_Algorithms;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Random;
+
+import org.junit.jupiter.api.Test;
+
+import _00_Intro_to_Sorting_Algorithms._02_SwappingDigits;
+
 public class ThanosSorter extends Sorter {
     public ThanosSorter() {
         type = "Thanos";
@@ -45,6 +53,29 @@ public class ThanosSorter extends Sorter {
      */
     @Override
     void sort(int[] arr, SortingVisualizer display) {
-        
+    	boolean balanced = true;
+    	
+    	  for (int k = 0; k < arr.length - 1; k++) {
+              if(arr[k]==0) {
+            	 k++;
+              }
+              else {
+              if( arr[k] > arr[ k+1 ] ) {
+            	  
+            	balanced = false;	  
+            	
+              }
+              if(balanced==false) {
+         		 int halfnum  =arr.length/2;
+         		  for(int i =0; i<halfnum; i++ ) {
+         			  arr[i]=0;
+         			  k=0;
+         		  }
+         		  
+         	  }
+              }
+    	  }
     }
+  
+    
 }
