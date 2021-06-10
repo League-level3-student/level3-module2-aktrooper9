@@ -10,7 +10,7 @@ class _03_SearchTest {
      *  A minimum of 3 tests are required for each method
      */
 String[] test =  {"h","g","j","k","l"};
-int[] test2 =  {1,2,3,4,5};
+int[] test2 =  {0,1,2,3,4,5};
     @Test
     public void testLinearSearch() {
      
