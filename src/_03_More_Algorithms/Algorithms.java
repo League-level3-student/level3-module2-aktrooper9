@@ -1,5 +1,7 @@
 package _03_More_Algorithms;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -54,19 +56,71 @@ public class Algorithms {
     	}    	
         return false;
     }
-    public static double sortScores(List<Double> scores) {
-   	 double highest = 0;
-    	for(int i =0; i<scores.size();i++) {
-    		for (int k = 0; k < scores.length - 1; k++) {
 
-    			if (scores[k] > scores[k + 1]) {
+   
+    public static List<Double> sortScores(List<Double> scores) {
+    	double temp = 0;  
+    	for (int i=0; i < scores.size()  - 1; i++) {
+    		for (int k = 0; k < scores.size() -i- 1; k++) {
+
+    			if ((scores.get(k)>(scores.get(k+1)) ) ){
+
+                    temp = scores.get(k);
+                    scores.set(k,scores.get(k+1) );
+                    scores.set(k+1, temp);
 
     			
     			}
     		
     	}
     	
-        }    	
-        return highest;
+        }   
+   // 	Collections.reverse(score);
+        return scores;
+    }
+    public static List<String> sortDNA(List<String> words) {
+
+    	String temp = "";  
+    	for (int i=0; i < words.size()  - 1; i++) {
+    		for (int k = 0; k < words.size() -i- 1; k++) {
+
+    			if ((words.get(k).length()>(words.get(k+1).length()) ) ){
+
+                    temp = words.get(k);
+                    words.set(k,words.get(k+1) );
+                    words.set(k+1, temp);
+
+    			
+    			}
+    		
+    	}
+    	
+        }   
+        return words;
+   
+    	
+    }
+    public static List<String> sortWords(List<String> words) {
+    	String temp = "";  
+    	for (int i=0; i < words.size()  - 1; i++) {
+    		for (int k = 0; k < words.size() -i- 1; k++) {
+
+    			if (words.get(k).compareTo(words.get(k)+1)>0){
+
+                    temp = words.get(k);
+                    words.set(k,words.get(k+1) );
+                    words.set(k+1, temp);
+
+    			
+    			}
+    		
+    	}
+    	
+        }   
+        return words;
+   
+    	
+	
+	
     }
 }
